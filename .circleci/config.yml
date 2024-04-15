@@ -28,7 +28,8 @@ jobs:
 #workflow - defines what sequence will the jobs run
 workflows:
   simple_workflow:
-    - build
-    - test:
-        requires:
-          - build
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
