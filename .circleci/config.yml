@@ -2,7 +2,7 @@ version: 2.1
 # orbs - reusable packages for our application
 orbs: 
   node: circleci/node@5.0.1
-  docker: circlei/docker@2.1.4
+  docker: circleci/docker@2.1.4
   #jobs - set of instructions / functions
 jobs:
   build: # job name
