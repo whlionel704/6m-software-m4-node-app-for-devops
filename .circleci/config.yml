@@ -1,0 +1,17 @@
+version: 2.1
+# orbs - reusable packages for our application
+orbs: 
+  node: circleci/node@5.0.1
+  docker: circlei/docker@2.1.4
+  #jobs - set of instructions / functions
+jobs:
+  build: # job name
+    docker: #environment
+      - image: cimg/node:16.10
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run : 
+          echo "Installing dependencies..."
+          npm install
