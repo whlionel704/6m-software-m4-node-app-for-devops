@@ -42,7 +42,7 @@ jobs:
   scan:
     docker:
       - image: cimg/node:16.10
-    enviornment: 
+    environment: 
       IMAGE_NAME: whlionel704/education-space
     steps:
       - checkout
@@ -63,3 +63,13 @@ workflows:
       - test:
           requires:
             - build
+          filters:
+            branches:
+              only: main
+      - scan:
+          requires:
+            - build
+          filters:
+            branches:
+              only: main
+
